@@ -1,0 +1,9 @@
+Conte o número de linhas que contêm as letras br.
+Crie um novo arquivo chamado phrases2.txt pelo terminal e adicione algumas frases de sua escolha.
+Adicione dois nomes de países ao final do arquivo phrases2.txt.
+Conte o número de linhas que não contêm as letras br.
+br
+br
+
+França
+Brasil
