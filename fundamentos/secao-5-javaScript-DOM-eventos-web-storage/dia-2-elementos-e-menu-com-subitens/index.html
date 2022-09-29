@@ -32,11 +32,27 @@
 
       ondePai.children[1].firstElementChild.innerHTML =
         'Adicionando Texto no primeiro elemento filho da section.pai';
-      console.log(ondePai.firstElementChild);
-      console.log(ondeVoceEsta.previousElementSibling);
-      console.log(ondeVoceEsta.nextSibling);
-      console.log(ondeVoceEsta.nextElementSibling);
-      console.log(ondePai.children[2]);
+      // console.log(ondePai.firstElementChild);
+      // console.log(ondeVoceEsta.previousElementSibling);
+      // console.log(ondeVoceEsta.nextSibling);
+      // console.log(ondeVoceEsta.nextElementSibling);
+      // console.log(ondePai.children[2]);
+
+      let novaSection = document.createElement('section');
+      novaSection.innerText = 'Novo filho!';
+      ondePai.appendChild(novaSection);
+
+      let novaSection2 = document.createElement('section');
+      novaSection2.innerText = 'Segundo filho!';
+      ondeVoceEsta.appendChild(novaSection2);
+
+      let novaSection3 = document.createElement('section');
+      novaSection3.innerText = 'Terceiro filho!';
+      ondeVoceEsta.firstElementChild.appendChild(novaSection3);
+
+      console.log(
+        novaSection3.parentElement.parentElement.nextElementSibling
+      );
     </script>
   </body>
 </html>
