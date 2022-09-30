@@ -6,8 +6,18 @@ const myWebpage = document.getElementById('my-spotrybefy');
 
 // - Copie esse arquivo e edite apenas ele;
 //  - Note que uma das caixas está um pouco acima das outras. Por que isso ocorre?
+firstLi.style = 'transform: translateY(0);';
 
 // - Crie uma função que adicione a classe 'tech' ao elemento `li` quando for clicado.
+const li = document.querySelectorAll('li');
+for (let idx in li) {
+  li[idx].addEventListener('click', () => {
+    if (!li[idx].className !== 'tech') {
+      li[idx].classList.toggle('tech');
+    }
+  });
+}
+
 //  - Deve existir apenas um elemento com a classe 'tech'. Como você faz isso?
 
 // - Crie uma função que, ao digitar na caixa de texto, altere o texto do elemento
