@@ -2,7 +2,10 @@ const decemberDaysList = [
   29, 30, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17,
   18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31,
 ];
-const holiday = 'Feriados';
+const calenderPin = ['Feriados', 'Sexta-feira'];
+const getButtonContainer = document.querySelector(
+  '.buttons-container'
+);
 
 function createDaysOfTheWeek() {
   const weekDays = [
@@ -49,22 +52,23 @@ function daysInMounth(arr) {
   }
 }
 
-function createButton(string) {
-  const getButtonContainer = document.querySelector(
-    '.buttons-container'
-  );
-  const createHolidayButton = document.createElement('button');
-  getButtonContainer.appendChild(createHolidayButton);
-  createHolidayButton.id = 'btn-holiday';
-  createHolidayButton.innerText = string;
+function createButtons(arr) {
+  const holidayButton = document.createElement('button');
+  const fridayButton = document.createElement('button');
+
+  getButtonContainer.appendChild(holidayButton);
+  holidayButton.id = 'btn-holiday';
+  holidayButton.innerText = arr[0];
+
+  getButtonContainer.appendChild(fridayButton);
+  fridayButton.id = 'btn-friday';
+  fridayButton.innerText = arr[1];
 }
 
 function changeColor() {
   const button = document.getElementById('btn-holiday');
   const holiday = document.querySelectorAll('.holiday');
   const color = 'red';
-  console.log(holiday);
-
   button.addEventListener('click', () => {
     for (let index = 0; index < holiday.length; index += 1) {
       if (holiday[index].style.backgroundColor === color) {
@@ -78,5 +82,5 @@ function changeColor() {
 
 createDaysOfTheWeek();
 daysInMounth(decemberDaysList);
-createButton(holiday);
+createButtons(calenderPin);
 changeColor();
