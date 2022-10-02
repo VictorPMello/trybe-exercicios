@@ -66,16 +66,27 @@ function createButtons(arr) {
 }
 
 function changeColor() {
-  const button = document.getElementById('btn-holiday');
-  const holiday = document.querySelectorAll('.holiday');
-  const color = 'red';
-  button.addEventListener('click', () => {
-    for (let index = 0; index < holiday.length; index += 1) {
-      if (holiday[index].style.backgroundColor === color) {
-        holiday[index].style.backgroundColor = 'rgb(238,238,238)';
+  const buttonHoliday = document.getElementById('btn-holiday');
+  const holidayPin = document.querySelectorAll('.holiday');
+  const buttonFriday = document.getElementById('btn-friday');
+  const fridayPin = document.querySelectorAll('.friday');
+  const arrColor = ['red', 'blue'];
+
+  buttonHoliday.addEventListener('click', () => {
+    for (let index = 0; index < holidayPin.length; index += 1) {
+      if (holidayPin[index].style.backgroundColor === arrColor[0]) {
+        holidayPin[index].style.backgroundColor = 'rgb(238,238,238)';
       } else {
-        holiday[index].style.backgroundColor = color;
+        holidayPin[index].style.backgroundColor = arrColor[0];
       }
+    }
+  });
+
+  buttonFriday.addEventListener('click', () => {
+    for (let idx = 0; idx < fridayPin.length; idx += 1) {
+      if (fridayPin[idx].style.backgroundColor === arrColor[1]) {
+        fridayPin[idx].style.backgroundColor = 'rgb(238,238,238)';
+      } else fridayPin[idx].style.backgroundColor = arrColor[1];
     }
   });
 }
