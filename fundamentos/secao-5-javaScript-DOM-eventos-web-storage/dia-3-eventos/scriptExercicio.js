@@ -59,6 +59,24 @@ function createButton(string) {
   createHolidayButton.innerText = string;
 }
 
+function changeColor() {
+  const button = document.getElementById('btn-holiday');
+  const holiday = document.querySelectorAll('.holiday');
+  const color = 'red';
+  console.log(holiday);
+
+  button.addEventListener('click', () => {
+    for (let index = 0; index < holiday.length; index += 1) {
+      if (holiday[index].style.backgroundColor === color) {
+        holiday[index].style.backgroundColor = 'rgb(238,238,238)';
+      } else {
+        holiday[index].style.backgroundColor = color;
+      }
+    }
+  });
+}
+
 createDaysOfTheWeek();
 daysInMounth(decemberDaysList);
 createButton(holiday);
+changeColor();
