@@ -103,8 +103,23 @@ function zoom() {
   });
 }
 
+function createTask() {
+  const getInput = document.querySelector('#task-input');
+  const getMyTasks = document.querySelector('.my-tasks');
+  const getButtonTask = document.getElementById('btn-add');
+
+  getButtonTask.addEventListener('click', () => {
+    const createSpan = document.createElement('span');
+    getMyTasks.appendChild(createSpan);
+    createSpan.className = 'my-tasks';
+    createSpan.innerText += getInput.value;
+    getInput.value = '';
+  });
+}
+
 createDaysOfTheWeek();
 daysInMounth(decemberDaysList);
 createButtons(calenderPin);
 changeColor();
 zoom();
+createTask();
