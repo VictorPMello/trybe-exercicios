@@ -91,7 +91,20 @@ function changeColor() {
   });
 }
 
+function zoom() {
+  const getDays = document.getElementById('days');
+
+  getDays.addEventListener('mouseover', (event) => {
+    event.target.style.fontSize = '25px';
+  });
+
+  getDays.addEventListener('mouseout', (event) => {
+    event.target.style.fontSize = '16px';
+  });
+}
+
 createDaysOfTheWeek();
 daysInMounth(decemberDaysList);
 createButtons(calenderPin);
 changeColor();
+zoom();
