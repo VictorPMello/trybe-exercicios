@@ -10,6 +10,8 @@ getButtonBackground.addEventListener('click', () => {
     arrColor.push(idx.value);
   }
   rgb = `rgb(${arrColor[0]},${arrColor[1]},${arrColor[2]})`;
+
+  localStorage.setItem('backgroundColor', rgb);
   body.style.backgroundColor = rgb;
 });
 
@@ -22,6 +24,8 @@ getButtonColor.addEventListener('click', () => {
     arrColor.push(idx.value);
   }
   rgb = `rgb(${arrColor[0]},${arrColor[1]},${arrColor[2]})`;
+
+  localStorage.setItem('fontColor', rgb);
   body.style.color = rgb;
 });
 
@@ -29,21 +33,35 @@ getButtonColor.addEventListener('click', () => {
 const getButtonFontSize = document.getElementById('btn-fontSize');
 getButtonFontSize.addEventListener('click', () => {
   const inputFontSize = document.querySelector('#fontSize');
-  body.style.fontSize = `${inputFontSize.value}px`;
+  const fontSize = `${inputFontSize.value}px`;
+
+  localStorage.setItem('fontSize', fontSize);
+  body.style.fontSize = fontSize;
 });
 
 // 4° requisito Alterar espaçamento entre linhas
 const getButtonLineHeight = document.getElementById('btn-lineHeight');
 getButtonLineHeight.addEventListener('click', () => {
   const inputLineHeight = document.querySelector('#lineHeight');
-  body.style.lineHeight = `${inputLineHeight.value}px`;
+  const lineHeight = `${inputLineHeight.value}px`;
+
+  localStorage.setItem('lineHeight', lineHeight);
+  body.style.lineHeight = lineHeight;
 });
 
 // 5° requisito Alterar tipo de fonte
 const getButtonFontFamily = document.getElementById('btn-fontFamily');
 getButtonFontFamily.addEventListener('click', () => {
   const inputFontFamily = document.querySelector('#fontFamily');
-  body.style.fontFamily = `${inputFontFamily.value}`;
+  const fontFamily = `${inputFontFamily.value}`;
+
+  localStorage.setItem('fontFamily', fontFamily);
+  body.style.fontFamily = fontFamily;
 });
 
 // Salvar informações em localStorage
+body.style.backgroundColor = localStorage.getItem('backgroundColor');
+body.style.color = localStorage.getItem('fontColor');
+body.style.fontSize = localStorage.getItem('fontSize');
+body.style.lineHeight = localStorage.getItem('lineHeight');
+body.style.fontFamily = localStorage.getItem('fontFamily');
