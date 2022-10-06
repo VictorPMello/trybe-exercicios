@@ -9,6 +9,7 @@ const myWebpage = document.getElementById('my-spotrybefy');
 firstLi.style = 'transform: translateY(0);';
 
 // - Crie uma função que adicione a classe 'tech' ao elemento `li` quando for clicado.
+
 const li = document.querySelectorAll('li');
 for (let idx in li) {
   li[idx].addEventListener('click', () => {
