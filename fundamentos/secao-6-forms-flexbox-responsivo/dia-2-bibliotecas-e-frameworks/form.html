@@ -8,66 +8,72 @@
       content="width=device-width, initial-scale=1.0"
     />
     <title>Document</title>
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="./css/bootstrap.min.css" />
   </head>
   <body>
     <header>
       <h1>Header da página</h1>
     </header>
-    <form action="" method="get">
+    <form action="" method="get" class="row g-3">
       <fieldset>
-        <section>
-          <label for="name">Nome:</label>
+        <section class="mb-3">
+          <label class="form-label" for="name">Nome:</label>
           <input
             type="text"
             name="name"
             id="name"
             minlength="10"
             maxlength="40"
+            class="form-control"
           />
         </section>
-        <section>
-          <label for="email">Email:</label>
+        <section class="mb-3">
+          <label class="form-label" for="email">Email:</label>
           <input
             type="text"
             name="email"
             id="email"
             minlength="10"
             maxlength="50"
+            class="form-control"
           />
         </section>
-        <section>
+        <section class="mb-3">
           <input
             type="radio"
+            class="form-check-input"
             name="lugar"
             id="opicao1"
             value="cidade"
           />
-          <label for="opicao1">Cidade</label>
+          <label class="form-label" for="opicao1">Cidade</label>
           <input
             type="radio"
+            class="form-check-input"
             name="lugar"
             id="opicao2"
             value="campo"
           />
-          <label for="opicao2">Campo</label>
+          <label class="form-label" for="opicao2">Campo</label>
           <input
             type="radio"
+            class="form-check-input"
             name="lugar"
             id="opicao3"
             value="praia"
           />
-          <label for="opicao3">Praia</label>
+          <label class="form-label" for="opicao3">Praia</label>
           <input
             type="radio"
+            class="form-check-input"
             name="lugar"
             id="opicao4"
             value="montanha"
           />
-          <label for="opicao4">Montanhas</label>
+          <label class="form-label" for="opicao4">Montanhas</label>
         </section>
-        <section>
-          <label for="textarea"
+        <section class="mb-3">
+          <label class="form-label" for="textarea"
             >Espaço para digitar a resposta:</label
           >
           <textarea
@@ -77,35 +83,38 @@
             rows="10"
             placeholder="Por que você deveria ser a pessoa desenvolvedora a ganhar o concurso TrybeTrip?"
             maxlength="500"
+            class="form-control"
           ></textarea>
         </section>
-        <section>
+        <section class="mb-3">
           <legend>
             Qual a melhor data para realizar sua viagem?
           </legend>
-          <label for="date">Data:</label>
+          <label class="form-label" for="date">Data:</label>
           <input type="date" name="date" id="date" />
         </section>
-        <section>
-          <section>
-            <label for="oportunidades"
+        <section class="mb-3">
+          <section class="mb-3">
+            <label class="form-label" for="oportunidades"
               >Gostaria de receber outras incríveis oportunidades
               oferecidas pela Trybe?</label
             >
             <input
               type="checkbox"
+              class="form-ckeck-input"
               name=""
               id="oportunidades"
               value="oportunidades"
             />
           </section>
-          <section>
-            <label for="imagens"
+          <section class="mb-3">
+            <label class="form-label" for="imagens"
               >Concordo que imagens das minhas férias poderão ser
               usadas na divulgação de concursos futuros.</label
             >
             <input
               type="checkbox"
+              class="form-ckeck-input"
               name=""
               id="imagens"
               value="imagens"
@@ -113,11 +122,13 @@
           </section>
         </section>
       </fieldset>
-      <section>
-        <button type="submit" id="submit">Enviar</button>
-        <button type="reset">Apagar</button>
+      <section class="mb-3">
+        <button class="btn btn-success" type="submit" id="submit">
+          Enviar
+        </button>
+        <button class="btn btn-danger" type="reset">Apagar</button>
       </section>
     </form>
-    <script src="./script.js"></script>
+    <script src="./js/bootstrap.min.js"></script>
   </body>
 </html>
