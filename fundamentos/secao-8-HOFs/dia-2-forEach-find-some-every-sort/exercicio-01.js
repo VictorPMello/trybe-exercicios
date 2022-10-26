@@ -87,7 +87,7 @@ const getNamedBook = (arr) =>
 
 // Ordene os livros por data de lançamento em ordem decrescente
 function booksOrderedByReleaseYearDesc(arr) {
-  return arr.sort((a, b) => (a.releaseYear > b.releaseYear ? -1 : 1));
+  return arr.sort((a, b) => b.releaseYear - a.releaseYear);
 }
 // console.log(booksOrderedByReleaseYearDesc(books));
 
@@ -97,7 +97,7 @@ function everyoneWasBornOnSecXX(arr) {
     (el) => el.author.birthYear > 1900 && el.author.birthYear <= 2000
   );
 }
-// console.log(everyoneWasBornOnSecXX(books));
+console.log('everyoneWasBornOnSecXX', everyoneWasBornOnSecXX(books));
 
 // Faça uma função que retorne true, se algum livro foi lançado na década de 80, e false, caso contrário.
 function someBookWasReleaseOnThe80s(arr) {
