@@ -176,14 +176,17 @@ const oldBooks = () => {
 
 //! 07 - Encontre o nome do livro escrito pela pessoa cujo nome registrado começa com três iniciais.
 
-const authorWith3DotsOnName = () => {
-  const author = books.find(
-    (book) =>
-      book.author.name[1] === '.' &&
-      book.author.name[4] === '.' &&
-      book.author.name[7] === '.'
-  );
+// const authorWith3DotsOnName = () => {
+//   const author = books.find(
+//     (book) =>
+//       book.author.name[1] === '.' &&
+//       book.author.name[4] === '.' &&
+//       book.author.name[7] === '.'
 
-  return author.name;
-};
-// console.log(authorWith3DotsOnName());
+//   );
+
+// TODO - 07 - REFATORANDO com REGEX Dica da monitoria
+
+const authorWith3DotsOnName = () =>
+  books.find((book) => /([A-Z][.][ ]){3}/.test(book.author.name));
+console.log(authorWith3DotsOnName());
