@@ -29,6 +29,9 @@ const people = [
 
 // escreva filterPeople abaixo
 const filterPeople = () =>
-  people.filter(({ nationality }) => nationality === 'Australian');
+  people.filter(
+    ({ nationality, bornIn }) =>
+      nationality === 'Australian' && bornIn < 2000
+  );
 
 console.log(filterPeople());
