@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0"
+    />
+    <title>Validador de Campos</title>
+  </head>
+  <body>
+    <form class="flex">
+      <div class="flex">
+        <fieldset>
+          <label for="firstName">
+            <p>Nome:</p>
+            <input id="firstName" type="text" required />
+          </label>
+          <label for="lastName">
+            <p>Sobrenome:</p>
+            <input id="lastName" type="text" required />
+          </label>
+        </fieldset>
+        <fieldset>
+          <label for="email">
+            <p>Email:</p>
+            <input id="email" type="email" required />
+          </label>
+          <label for="password">
+            <p>Senha:</p>
+            <input id="password" type="password" required />
+          </label>
+        </fieldset>
+      </div>
+      <fieldset>
+        <textarea name="message" id="message"></textarea>
+      </fieldset>
+      <fieldset>
+        <label for="state">
+          <p>Selecione seu estado:</p>
+          <select name="" id="state" required>
+            <option value="AC">Acre</option>
+            <option value="AL">Alagoas</option>
+            <option value="AP">Amapá</option>
+            <option value="AM">Amazonas</option>
+            <option value="BA">Bahia</option>
+            <option value="CE">Ceará</option>
+            <option value="DF">Distrito Federal</option>
+            <option value="ES">Espírito Santo</option>
+            <option value="GO">Goiás</option>
+            <option value="MA">Maranhão</option>
+            <option value="MT">Mato Grosso</option>
+            <option value="MS">Mato Grosso do Sul</option>
+            <option value="MG">Minas Gerais</option>
+            <option value="PA">Pará</option>
+          </select>
+        </label>
+      </fieldset>
+      <fieldset class="flex">
+        <input
+          class="btn"
+          id="verify"
+          type="button"
+          value="Validar"
+        />
+        <input class="btn" type="submit" value="Enviar" disabled />
+        <input class="btn" type="reset" value="Cancelar" />
+      </fieldset>
+    </form>
+
+    <script src="/src/validator.js" type="module"></script>
+  </body>
+</html>
