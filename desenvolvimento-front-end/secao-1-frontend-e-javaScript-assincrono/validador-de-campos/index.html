@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -7,68 +7,50 @@
       name="viewport"
       content="width=device-width, initial-scale=1.0"
     />
+    <link rel="stylesheet" href="style.css" />
     <title>Validador de Campos</title>
   </head>
-  <body>
-    <form class="flex">
-      <div class="flex">
-        <fieldset>
-          <label for="firstName">
-            <p>Nome:</p>
-            <input id="firstName" type="text" required />
-          </label>
-          <label for="lastName">
-            <p>Sobrenome:</p>
-            <input id="lastName" type="text" required />
-          </label>
-        </fieldset>
-        <fieldset>
-          <label for="email">
-            <p>Email:</p>
-            <input id="email" type="email" required />
-          </label>
-          <label for="password">
-            <p>Senha:</p>
-            <input id="password" type="password" required />
-          </label>
-        </fieldset>
-      </div>
-      <fieldset>
-        <textarea name="message" id="message"></textarea>
-      </fieldset>
-      <fieldset>
-        <label for="state">
-          <p>Selecione seu estado:</p>
-          <select name="" id="state" required>
-            <option value="AC">Acre</option>
-            <option value="AL">Alagoas</option>
-            <option value="AP">Amapá</option>
-            <option value="AM">Amazonas</option>
-            <option value="BA">Bahia</option>
-            <option value="CE">Ceará</option>
-            <option value="DF">Distrito Federal</option>
-            <option value="ES">Espírito Santo</option>
-            <option value="GO">Goiás</option>
-            <option value="MA">Maranhão</option>
-            <option value="MT">Mato Grosso</option>
-            <option value="MS">Mato Grosso do Sul</option>
-            <option value="MG">Minas Gerais</option>
-            <option value="PA">Pará</option>
-          </select>
-        </label>
-      </fieldset>
-      <fieldset class="flex">
-        <input
-          class="btn"
-          id="verify"
-          type="button"
-          value="Validar"
-        />
-        <input class="btn" type="submit" value="Enviar" disabled />
-        <input class="btn" type="reset" value="Cancelar" />
-      </fieldset>
-    </form>
 
-    <script src="/src/validator.js" type="module"></script>
+  <body>
+    <div class="container">
+      <!-- Note os ids colocados -->
+      <h1>Validador de campos</h1>
+      <form>
+        <!-- Esse será nosso campo para inserirmos o texto a ser validado -->
+        <input
+          type="text"
+          placeholder="Insira aqui o valor"
+          id="value"
+        />
+
+        <!--
+        Aqui, validaremos cinco tipos de objeto. Veja a
+        documentação da biblioteca Validator.js para ver outros
+        tipos de validações
+      -->
+        <select name="campo" id="option">
+          <option value="cpf">CPF</option>
+          <option value="hexColor">Cor Hexadecimal</option>
+          <option value="email">email</option>
+          <option value="uuid">UUID v4</option>
+          <option value="url">url</option>
+        </select>
+
+        <!-- Vamos adicionar um botão para confirmarmos a validação -->
+        <button id="button">Validar</button>
+      </form>
+
+      <!-- Vamos também adicionar um parágrafo para retornarmos a validação -->
+      <p id="answer">
+        Digite o valor, escolha a opção e clique em validar
+      </p>
+    </div>
+
+    <!--
+    Importamos o nosso código por último. Lembre-se de colocá-lo
+    como type="module", para que ele possa fazer as devidas
+    importações
+  -->
+    <script type="module" src="main.js"></script>
   </body>
 </html>
